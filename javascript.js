@@ -1,7 +1,7 @@
-const billamount=document.querySelector("#bill-amount");
-const cashgiven=document.querySelector("#cash-given");
-const checkButton=document.querySelector("clickbutton");
-const message=document.querySelector("#error-message");
+const billamount=document.getElementById("bill-amount");
+const cashgiven=document.getElementById("cash-given");
+const checkButton=document.getElementById("clickbutton");
+const message=document.getElementById("error-message");
 checkButton.addEventListener("click",function validateBillAndCashAmount(){
 
         if(billamount>0){
