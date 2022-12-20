@@ -5,11 +5,14 @@ const message=document.getElementById("error-message");
 const noOfNotes=document.querySelectorAll(".no-of-notes");//(".no-of-notes");
 
 const availableNotes=[5000,1000,500,100,50,20,10,5,2,1]
+
 checkButton.addEventListener("click",function validateBillAndCashAmount(){
-        message.style.display="none";
+
+    hideMessage();
+
         if(billamount.value>0){
-                if(cashgiven.value>=billamount.value){
-                    const amountToBeReturn = cashgiven.value-billamount.value
+                if(cashgiven.value >= billamount.value){
+                    var amountToBeReturn = cashgiven.value-billamount.value;
                     calculaterChange(amountToBeReturn);
 
                 }else{
@@ -20,14 +23,19 @@ checkButton.addEventListener("click",function validateBillAndCashAmount(){
             showmessage("Invalid amount");
         }
 })
+    var numberOfNotes;
     function calculaterChange(amountToBeReturn){
         for(i=0;i<availableNotes.length;i++){
-            const numberOfNotes = Math.trunc(amountToBeReturn/availableNotes[i]);
-        }
-            amountToBeReturn %= availableNotes[i];
+        numberOfNotes  = Math.trunc(amountToBeReturn/availableNotes[i]);
+        amountToBeReturn =amountToBeReturn % availableNotes[i];
             noOfNotes[i].innerHTML=numberOfNotes;
+        }
+            
 
     } 
+    function hideMessage(){
+        message.style.display="none";
+    }
         function showmessage(msg){
     message.style.display="block";
     message.innerHTML=msg;
