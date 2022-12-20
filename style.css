@@ -41,8 +41,8 @@
 
 }
 .btn{
-    height:  2vw;
-    color: rgb(18, 12, 55);
+    font-size: 1rem;
+    background-color: darkgray;
     font-size:larger;
     text-decoration: bold;
 }
